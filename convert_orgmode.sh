@@ -27,7 +27,7 @@ for i in $(ls aoc | grep -v 'static'); do
 	
 	mkdir -p ${dayofyeardirmkd}
 
-	file_org_path="$dayofyeardirmkd/index.org"
+	file_org_path="$dayofyeardirmkd/README.org"
 
 	cp ${fileinput} ${fileinputdestiny}
 	

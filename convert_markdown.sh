@@ -25,7 +25,7 @@ for i in $(ls aoc | grep -v 'static'); do
 	
 	mkdir -p ${dayofyeardirmkd}
 
-	file_md_path="$dayofyeardirmkd/index.md"
+	file_md_path="$dayofyeardirmkd/README.md"
 
 	cp ${fileinput} ${fileinputdestiny}
 	

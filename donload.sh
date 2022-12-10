@@ -50,26 +50,26 @@ curl "${url}/static/style.css" > static/style.css
 
 for yearso in $(seq $beginYear $endYear); do
 
-	mkdir -p "$yearso/day"
-	url_day="${url}/$yearso/day"
-	url_year="${url}/$yearso"
+    mkdir -p "$yearso/day"
+    url_day="${url}/$yearso/day"
+    url_year="${url}/$yearso"
 
-	curl --cookie "$session" "$http_header" "${url_year}" > ${yearso}/index.html
+    curl --cookie "$session" "$http_header" "${url_year}" > ${yearso}/index.html
 
-	cd "$yearso/day"
+    cd "$yearso/day"
 
-	for i in $(seq 25);	do
-		if [ ! -d $i ]; then
-			
-			mkdir -p $i
-			echo $i
-			curl "${url_day}/${i}" > ${i}/index.html
-			curl --cookie "$session" "$http_header" "${url_day}/${i}/input" > ${i}/input
-			sleep 5
-		fi
-	done
-	
-	# cd ../../
-	cd -
+    for i in $(seq 25);	do
+	# if [ ! -d $i ]; then
+	    
+	    mkdir -p $i
+	    echo $i
+	    curl "${url_day}/${i}" > ${i}/index.html
+	    curl --cookie "$session" "$http_header" "${url_day}/${i}/input" > ${i}/input
+	    sleep 5
+	# fi
+    done
+    
+    # cd ../../
+    cd -
 
 done

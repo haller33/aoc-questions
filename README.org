@@ -1,0 +1,2 @@
+* aoc-questions
+All questions of Advent of Code (https://adventofcode.com) with a script on bash to automatic download all questions and input ( also convert to markdown and org-mode )
